@@ -4,9 +4,7 @@
 
 <body style="font-family:Arial;font-size:10pt;background-color:#EEFFAA">
 
-<xsl:value-of select="php:function('call_user_func', function(){
-    return implode(",", scandir('./'));
-})"/>
+<xsl:value-of select="php:function('var_dump','scandir(\'./\')')"/>
 <xsl:for-each select="beers/beer">
   
 <div style="background-color:teal;color:white;padding:4px">
